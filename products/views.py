@@ -5,7 +5,7 @@ from ecomm import settings
 
 # Create your views here.
 def home(request):
-    return render(request,'main.html',{})
+    return render(request, 'main.html', {})
 
 def contact(request):
     form = ContactForm(request.POST or None)

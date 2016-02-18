@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
-    'crispy_forms'
+    'crispy_forms',
+    'django.contrib.sites',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -137,3 +139,9 @@ EMAIL_HOST_PASSWORD = '1qweasdzxc'
 
 #***********CRISPY_TEMPLATE
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#**********Registration redux
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+SITE_ID=1
+LOGIN_REDIRECT_URL='/product/'
