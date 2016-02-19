@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce3d8502-526e-4792-bfbb-51edd0cccd2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+    <list default="true" id="ce3d8502-526e-4792-bfbb-51edd0cccd2c" name="Default" comment="model manager">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/models.py" afterPath="$PROJECT_DIR$/products/models.py" />
     </list>
     <ignored path="ecomm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -575,7 +573,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455875552189</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="model manager">
+      <created>1455878903303</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1455878903303</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -619,7 +623,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="if auth added to nav bar&#10;" />
     <MESSAGE value="ListView and DetailProduct_Detailew added&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="ListView and DetailProduct_Detailew added&#10;" />
+    <MESSAGE value="model manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="model manager" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
