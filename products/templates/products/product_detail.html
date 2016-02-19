@@ -1,18 +1,39 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-  {{ object }}
- {% if object.variation_set.count > 1 %}
-  <select class="form-control">
+    <div class="row ">
+        <div class="col-md-8">
+            <h1>{{ object.title }}</h1>
+            {% if object.productimage_set.count > 0 %}
+                <div>
+                    {% for img in object.productimage_set.all %}
+                        <img class='img-responsive' src='{{ img.image.url }}' />
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="lead">{{ object.description }}</div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>{{ object.price }}</h3>
+            {% if object.variation_set.count > 1 %}
+                <select class="form-control">
+                    {% for var in object.variation_set.all %}
+
+                        <option value="{{ var.id }}">{{ var }} </option>
+                    {% endfor %}
+
+                </select>
+
+            {% endif %}
+            <br />
+            <a>Add to Cart</a>
+            <hr />
+            <h4>Related products</h4>
+        </div>
+    </div>
 
 
-      {% for var in object.variation_set.all %}
-        <option value="{{ var.id }}">{{ var }} </option>
-      {% endfor %}
-
-  </select>
-
-  {% endif %}
-  <a>Add to Cart</a>
 
 {% endblock %}

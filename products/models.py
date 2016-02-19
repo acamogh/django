@@ -68,3 +68,10 @@ def product_post_saved_receiver(sender, instance, created, *args, **kwargs):
 
 
 post_save.connect(product_post_saved_receiver, sender=Product)
+
+class ProductImage(models.Model):
+	product = models.ForeignKey(Product)
+	image = models.ImageField(upload_to='product/')
+
+	def __unicode__(self):
+		return self.product.title
