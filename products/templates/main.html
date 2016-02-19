@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{ user }}
-    hellosads
+    {% if request.user.is_authenticated %}
+        hellosads
+    {% endif %}
+        mamam
+
 {% endblock %}
