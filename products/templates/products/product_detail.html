@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{{ object }}
+  {{ object }}
+ {% if object.variation_set.count > 1 %}
+  <select class="form-control">
+
+
+      {% for var in object.variation_set.all %}
+        <option value="{{ var.id }}">{{ var }} </option>
+      {% endfor %}
+
+  </select>
+
+  {% endif %}
+  <a>Add to Cart</a>
+
 {% endblock %}
