@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from .forms import ContactForm
+from .models import Product
 from ecomm import settings
 
 # Create your views here.
-def home(request):
-    return render(request, 'main.html', {})
+class ProductViewList(ListView):
+    model = Product
+
+class ProductDetailView(DetailView):
+    model = Product
 
 def contact(request):
     form = ContactForm(request.POST or None)
