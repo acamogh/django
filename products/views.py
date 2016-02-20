@@ -4,16 +4,19 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.http import Http404
 from django.contrib import messages
-from .forms import ContactForm,VariationInventoryFormSet
-from .models import Product, Variation
-from ecomm import settings
 from django.db.models import Q
 from django.utils import timezone
 
 
+from .forms import ContactForm,VariationInventoryFormSet
+from .models import Product, Variation
+from .mixins import StaffRequiredMixin,LoginRequiredMixin
+from ecomm import settings
+
+
 
 # Create your views here.
-class VariationListView(ListView):
+class VariationListView(StaffRequiredMixin,ListView):
     model = Variation
     queryset = Variation.objects.all
 
