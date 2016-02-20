@@ -4,12 +4,9 @@
     <list default="true" id="ce3d8502-526e-4792-bfbb-51edd0cccd2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ecomm/settings.py" afterPath="$PROJECT_DIR$/ecomm/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ecomm/urls.py" afterPath="$PROJECT_DIR$/ecomm/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/admin.py" afterPath="$PROJECT_DIR$/products/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/models.py" afterPath="$PROJECT_DIR$/products/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/templates/products/product_detail.html" afterPath="$PROJECT_DIR$/products/templates/products/product_detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/urls.py" afterPath="$PROJECT_DIR$/products/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products/views.py" afterPath="$PROJECT_DIR$/products/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/navbar.html" afterPath="$PROJECT_DIR$/templates/navbar.html" />
     </list>
     <ignored path="ecomm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/products/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="28" column="40" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -50,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/products/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -58,11 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/products/templates/products/product_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5798969">
+            <state vertical-scroll-proportion="-9.291667">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/navbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.23195876">
+              <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -83,7 +90,7 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="61" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="61" />
               <folding />
             </state>
@@ -103,7 +110,7 @@
       <file leaf-file-name="product_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/products/templates/products/product_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
+            <state vertical-scroll-proportion="-12.416667">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
@@ -161,16 +168,16 @@
         <option value="$PROJECT_DIR$/templates/contact.html" />
         <option value="$PROJECT_DIR$/products/templates/main.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/templates/navbar.html" />
-        <option value="$PROJECT_DIR$/products/views.py" />
         <option value="$PROJECT_DIR$/products/templates/products/products.html" />
         <option value="$PROJECT_DIR$/products/templates/products/product_list.html" />
         <option value="$PROJECT_DIR$/products/admin.py" />
-        <option value="$PROJECT_DIR$/products/urls.py" />
         <option value="$PROJECT_DIR$/products/models.py" />
         <option value="$PROJECT_DIR$/ecomm/urls.py" />
         <option value="$PROJECT_DIR$/ecomm/settings.py" />
         <option value="$PROJECT_DIR$/products/templates/products/product_detail.html" />
+        <option value="$PROJECT_DIR$/products/urls.py" />
+        <option value="$PROJECT_DIR$/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/products/views.py" />
       </list>
     </option>
   </component>
@@ -210,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,6 +315,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -567,8 +574,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="ecomm.settings" />
+        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/../../env_1.9/bin/python2.7" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -580,7 +587,7 @@
       <option name="port" value="8080" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://127.0.0.1:8080/product/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -638,7 +645,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455883566075</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="uploading images">
+      <created>1455905888766</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1455905888766</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -684,7 +697,8 @@
     <MESSAGE value="ListView and DetailProduct_Detailew added&#10;" />
     <MESSAGE value="model manager" />
     <MESSAGE value="signals" />
-    <option name="LAST_COMMIT_MESSAGE" value="signals" />
+    <MESSAGE value="uploading images" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploading images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -700,6 +714,88 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/products/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecomm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding>
+            <element signature="e#638#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecomm/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="129" column="20" selection-start-line="129" selection-start-column="20" selection-end-line="129" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/products/product_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/products/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -785,7 +881,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#638#679#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -901,13 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22110553">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/products/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -933,50 +1024,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/products/product_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/products/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="25" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecomm/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-          <folding>
-            <element signature="e#638#679#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -991,16 +1044,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="61" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/products/product_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.416667">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/products/templates/products/product_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5798969">
+        <state vertical-scroll-proportion="-9.291667">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecomm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding>
+            <element signature="e#638#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23195876">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
           <folding />
         </state>
       </provider>
