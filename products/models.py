@@ -56,6 +56,7 @@ class Variation(models.Model):
         return self.product.get_absolute_url()
 
 
+# sinal
 def product_post_saved_receiver(sender, instance, created, *args, **kwargs):
     product = instance
     variations = product.variation_set.all()
@@ -69,9 +70,10 @@ def product_post_saved_receiver(sender, instance, created, *args, **kwargs):
 
 post_save.connect(product_post_saved_receiver, sender=Product)
 
-class ProductImage(models.Model):
-	product = models.ForeignKey(Product)
-	image = models.ImageField(upload_to='product/')
 
-	def __unicode__(self):
-		return self.product.title
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product)
+    image = models.ImageField(upload_to='product/')
+
+    def __unicode__(self):
+        return self.product.title
