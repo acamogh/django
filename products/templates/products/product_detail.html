@@ -2,6 +2,33 @@
 {% load staticfiles %}
 
 {% block content %}
+
+    <script>
+        {% block jquery %}
+
+
+            function setPrice(){
+                var price = $(".variation_select option:selected").attr("data-price")
+{#                var price = $(".variation_select option:selected").attr("data-price");#}
+
+                var sale_price = $(".variation_select option:selected").attr("data-sale-price")
+                if (sale_price != "" && sale_price != "None" && sale_price != null ) {
+                    $("#price").html("<h3>" + sale_price + " <small style='color:red;text-decoration:line-through'>" + price  + "</small></h3>");
+                } else {
+                    $("#price").html(price);
+                }
+            }
+            setPrice()
+
+            $(".variation_select").change(function(){
+                setPrice()
+                // var img = $(".variation_select option:selected").attr("data-img")
+                // $("img").attr("src", img);
+
+            })
+
+        {% endblock %}
+    </script>
     <div class="row ">
         <div class="col-md-8">
             <h1>{{ object.title }}</h1>
@@ -16,15 +43,22 @@
         </div>
 
         <div class="col-md-4">
-            <h3>{{ object.price }}</h3>
+
             {% if object.variation_set.count > 1 %}
-                <select class="form-control">
+                <h3 id="price">{{ object.price }}</h3>
+                <select class="form-control variation_select">
                     {% for var in object.variation_set.all %}
 
-                        <option value="{{ var.id }}">{{ var }} </option>
+                        <option data-price='{{ var.price }}' data-sale-price='{{ var.sale_price }}' value="{{ var.id }}">{{ var }} </option>
                     {% endfor %}
 
                 </select>
+            {% else %}
+                {% if object.variation_set.first.sale_price%}
+                    <h3>{{ object.variation_set.first.sale_price }}<small style='color:red;text-decoration:line-through'>{{ object.variation_set.first.price }}</small></h3>
+                    {% else %}
+                    <h3 >{{ object.variation_set.first.price }}</h3>
+                {% endif %}
 
             {% endif %}
             <br />
@@ -39,7 +73,7 @@
             <a href="https://plus.google.com/share?url={{ request.build_absolute_uri }}">
                 <i class="fa fa-google-plus-square fa-3x"></i></a>
 
-  
+
             <hr />
             <h4>Related products</h4>
         </div>
