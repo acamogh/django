@@ -7,5 +7,7 @@ urlpatterns = [
      url(r'^$', views.ProductViewList.as_view(), name='ProductViewList'),
      url(r'^(?P<pk>\d+)/$', views.ProductDetailView.as_view(), name='Product_Detail'),
      url(r'^(?P<pk>\d+)/inventory/$', views.VariationListView.as_view(), name='product_inventory'),
+     url(r'^category/$', views.CategoryListView.as_view(), name='CategoryListView'),
+     url(r'^category/(?P<pk>\d+)/$', views.CategoryDetailView.as_view(), name='CategoryDetailView'),
 
 ]
