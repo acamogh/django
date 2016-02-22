@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sites',
     'registration',
+    'main_page',
 ]
 
 MIDDLEWARE_CLASSES = [

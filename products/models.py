@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 
 from django.db import models
+from django.utils.safestring import mark_safe
 from django.db.models.signals import post_save
 
 
@@ -19,12 +20,13 @@ class ProductManager(models.Manager):
     def all(self, *args, **kwargs):
         return self.get_queryset().active()
 
-    def get_related(self,instance):
-        product1=self.get_queryset().filter(categories__in=instance.categories.all())
-        product2=self.get_queryset().filter(default=instance.default)
-        qs = (product1|product2).exclude(id=instance.id).distinct()
+    def get_related(self, instance):
+        product1 = self.get_queryset().filter(categories__in=instance.categories.all())
+        product2 = self.get_queryset().filter(default=instance.default)
+        qs = (product1 | product2).exclude(id=instance.id).distinct()
 
         return qs
+
 
 class Product(models.Model):
     title = models.CharField(max_length=120)
@@ -43,7 +45,7 @@ class Product(models.Model):
         return reverse('Product_Detail', kwargs={'pk': self.pk})
 
     def get_image_url(self):
-        img =self.productimage_set.first()
+        img = self.productimage_set.first()
         if img:
             return img.image.url
         return img
@@ -65,6 +67,14 @@ class Variation(models.Model):
             return self.sale_price
         else:
             return self.price
+
+    def get_html_price(self):
+        if self.sale_price is not None:
+            html_text = "<span class='sale-price'>%s</span> <span  <small style='color:red;text-decoration:line-through'>%s</small></span>" % (
+                self.sale_price, self.price)
+        else:
+            html_text = "<span class='price'>%s</span>" % (self.price)
+        return mark_safe(html_text)
 
     def get_absolute_url(self):
         return self.product.get_absolute_url()
@@ -105,3 +115,17 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse('CategoryDetailView', kwargs={'pk': self.pk})
+
+class ProductFeatured(models.Model):
+	product = models.ForeignKey(Product)
+	image = models.ImageField(upload_to='featured/')
+	title = models.CharField(max_length=120, null=True, blank=True)
+	text = models.CharField(max_length=220, null=True, blank=True)
+	text_right = models.BooleanField(default=False)
+	text_css_color = models.CharField(max_length=6, null=True, blank=True)
+	show_price = models.BooleanField(default=False)
+	make_image_background = models.BooleanField(default=False)
+	active = models.BooleanField(default=True)
+
+	def __unicode__(self):
+		return self.product.title

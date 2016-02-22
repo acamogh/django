@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-sm-3 pull-right">
+
+            <p class='lead text-align-center'>{{ title }}</p>
+
+            <form method='POST' action=''>{% csrf_token %}
+                {{ form|crispy }}
+
+                <input class='btn btn-primary' type='submit' value='Sign Up' />
+
+            </form>
+        </div>
+
+        <div class='col-sm-3'>
+            <p class='lead text-align-center'>Built with Django &amp; Bootstrap</p>
+        </div>
+
+        <div class='col-sm-3'>
+            <p class='lead text-align-center'>Created for Starters of all kinds. </p>
+        </div>
+
+        <div class='col-sm-3'>
+            <p class='lead text-align-center'>Always Open Source</p>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
+{% block jumbotron %}
+    <div class="jumbotron" style="min-height: 400px;background: url('{{ featured_image.image.url }}')no-repeat;background-size: cover;background-position: 0px -176px">
+    <div class="container">
+    <div class="row pull-right">
+        <div class='col-sm-6'>
+            <h1 style="color: white">{{ featured_image.product.title }}</h1>
+            <p style="color: white">{{ featured_image.product.description }}</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href=" {{ featured_image.product.get_absolute_url }} " role="button">More Details &raquo;</a>
+            </p>
+        </div>
+{#        <div class='col-sm-6'>#}
+{#            <img src="{{ featured_image.image.url }}" class="img-responsive">#}
+{#        </div>#}
+
+    </div>
+    </div>
+    </div>
+{% endblock %}

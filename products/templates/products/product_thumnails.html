@@ -1,0 +1,9 @@
+<div class="thumbnail text-center">
+    <h4><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h4>
+    {% if item.get_image_url %}
+        <img class='img-responsive' src='{{ item.get_image_url }}' />
+    {% endif %}
+    {% if price == True %}
+        {{ item.variation_set.first.get_html_price }}
+    {% endif %}
+</div>

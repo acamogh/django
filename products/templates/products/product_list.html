@@ -24,12 +24,14 @@
         {% for item in object_list %}
             <div class="col-xs-4">
 
-                <div class="thumbnail text-center">
-                    <h4><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h4>
-                    {% if item.get_image_url %}
-                        <img class='img-responsive' src='{{ item.get_image_url }}' />
-                    {% endif %}
-                </div>
+{#                <div class="thumbnail text-center">#}
+{#                    <h4><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h4>#}
+{#                    {% if item.get_image_url %}#}
+{#                        <img class='img-responsive' src='{{ item.get_image_url }}' />#}
+{#                    {% endif %}#}
+{#                </div>#}
+            {% include 'products/product_thumnails.html' with item=item price=True %}
+
 
             </div>
             {% cycle '' '' '</div><hr /><div class="row">' %}
