@@ -2,20 +2,37 @@
 {% load staticfiles %}
 
 {% block content %}
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in object_list %}
-        <tr>
-          <td><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></td>
-          <td>{{ item.price }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+    <h1>All Products <small><a href="{% url 'CategoryListView' %}">Categories</a></small></h1>
+    {#  <table class="table table-bordered">#}
+    {#    <thead>#}
+    {#      <tr>#}
+    {#        <th>Item</th>#}
+    {#        <th>Price</th>#}
+    {#      </tr>#}
+    {#    </thead>#}
+    {#    <tbody>#}
+    {#      {% for item in object_list %}#}
+    {#        <tr>#}
+    {#          <td><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></td>#}
+    {#          <td>{{ item.price }}</td>#}
+    {#        </tr>#}
+    {#      {% endfor %}#}
+    {#    </tbody>#}
+    {#  </table>#}
+
+    <div class="row">
+        {% for item in object_list %}
+            <div class="col-xs-4">
+
+                <div class="thumbnail text-center">
+                    <h4><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h4>
+                    {% if item.get_image_url %}
+                        <img class='img-responsive' src='{{ item.get_image_url }}' />
+                    {% endif %}
+                </div>
+
+            </div>
+            {% cycle '' '' '</div><hr /><div class="row">' %}
+        {% endfor %}
+    </div>
 {% endblock %}

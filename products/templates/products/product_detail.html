@@ -10,7 +10,7 @@
 
             function setPrice(){
                 var price = $(".variation_select option:selected").attr("data-price")
-{#                var price = $(".variation_select option:selected").attr("data-price");#}
+                {#                var price = $(".variation_select option:selected").attr("data-price");#}
 
                 var sale_price = $(".variation_select option:selected").attr("data-sale-price")
                 if (sale_price != "" && sale_price != "None" && sale_price != null ) {
@@ -33,17 +33,17 @@
     <div class="row ">
         <div class="col-md-8">
             <h1>{{ object.title }}</h1>
-{#            {% if object.productimage_set.count > 0 %}#}
-{#                <div>#}
-{#                    {% for img in object.productimage_set.all %}#}
-{#                        <img class='img-responsive' src='{{ img.image.url }}' />#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{#            {% endif %}#}
+            {#            {% if object.productimage_set.count > 0 %}#}
+            {#                <div>#}
+            {#                    {% for img in object.productimage_set.all %}#}
+            {#                        <img class='img-responsive' src='{{ img.image.url }}' />#}
+            {#                    {% endfor %}#}
+            {#                </div>#}
+            {#            {% endif %}#}
 
-                {% if object.get_image_url %}
-                     <img class='img-responsive' src='{{ object.get_image_url }}' />#}
-                {% endif %}
+            {% if object.get_image_url %}
+                <img class='img-responsive' src='{{ object.get_image_url }}' />#}
+            {% endif %}
             <div class="lead">{{ object.description }}</div>
         </div>
 
@@ -61,7 +61,7 @@
             {% else %}
                 {% if object.variation_set.first.sale_price%}
                     <h3>{{ object.variation_set.first.sale_price }}<small style='color:red;text-decoration:line-through'>{{ object.variation_set.first.price }}</small></h3>
-                    {% else %}
+                {% else %}
                     <h3 >{{ object.variation_set.first.price }}</h3>
                 {% endif %}
 
@@ -82,13 +82,22 @@
             <hr />
             <h4>Related products</h4>
 
+            <div class="row">
+            {% for item in related %}
+                <div class="col-xs-6">
 
-        {% for item in related %}
-               {% if item.get_image_url %}
-                     <img class='img-responsive' src='{{ item.get_image_url }}' />
-                {% endif %}
-            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
-        {% endfor %}
+                        <div class="thumbnail text-center">
+                            <h4><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h4>
+                            {% if item.get_image_url %}
+                                <img class='img-responsive' src='{{ item.get_image_url }}' />
+                            {% endif %}
+                        </div>
+
+                </div>
+                {% cycle '' '</div><div class="row">' %}
+            {% endfor %}
+            </div>
+
 
         </div>
     </div>

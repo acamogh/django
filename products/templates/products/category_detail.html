@@ -7,15 +7,31 @@
     <h3>{{ object }}</h3>
 
 
-    <table class='table'>
+{#    <table class='table'>#}
+{##}
+{#        {% for product in products %}#}
+{#            <tr>#}
+{#                <td><a href='{{ product.get_absolute_url }}'>{{ product.title }}</a></td>#}
+{#            </tr>#}
+{##}
+{#        {% endfor %}#}
+{##}
+{#    </table>#}
 
-        {% for product in products %}
-            <tr>
-                <td><a href='{{ product.get_absolute_url }}'>{{ product.title }}</a></td>
-            </tr>
+        <div class="row">
+        {% for item in products %}
+            <div class="col-xs-4">
 
+                <div class="thumbnail text-center">
+                    <h4><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h4>
+                    {% if item.get_image_url %}
+                        <img class='img-responsive' src='{{ item.get_image_url }}' />
+                    {% endif %}
+                </div>
+
+            </div>
+            {% cycle '' '' '</div><hr /><div class="row">' %}
         {% endfor %}
-
-    </table>
+    </div>
 
 {% endblock %}
