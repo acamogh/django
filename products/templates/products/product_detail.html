@@ -7,6 +7,7 @@
         {% block jquery %}
 
 
+
             function setPrice(){
                 var price = $(".variation_select option:selected").attr("data-price")
 {#                var price = $(".variation_select option:selected").attr("data-price");#}
@@ -32,13 +33,17 @@
     <div class="row ">
         <div class="col-md-8">
             <h1>{{ object.title }}</h1>
-            {% if object.productimage_set.count > 0 %}
-                <div>
-                    {% for img in object.productimage_set.all %}
-                        <img class='img-responsive' src='{{ img.image.url }}' />
-                    {% endfor %}
-                </div>
-            {% endif %}
+{#            {% if object.productimage_set.count > 0 %}#}
+{#                <div>#}
+{#                    {% for img in object.productimage_set.all %}#}
+{#                        <img class='img-responsive' src='{{ img.image.url }}' />#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            {% endif %}#}
+
+                {% if object.get_image_url %}
+                     <img class='img-responsive' src='{{ object.get_image_url }}' />#}
+                {% endif %}
             <div class="lead">{{ object.description }}</div>
         </div>
 
@@ -76,6 +81,15 @@
 
             <hr />
             <h4>Related products</h4>
+
+
+        {% for item in related %}
+               {% if item.get_image_url %}
+                     <img class='img-responsive' src='{{ item.get_image_url }}' />
+                {% endif %}
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+        {% endfor %}
+
         </div>
     </div>
 

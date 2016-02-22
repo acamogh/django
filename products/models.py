@@ -19,6 +19,12 @@ class ProductManager(models.Manager):
     def all(self, *args, **kwargs):
         return self.get_queryset().active()
 
+    def get_related(self,instance):
+        product1=self.get_queryset().filter(categories__in=instance.categories.all())
+        product2=self.get_queryset().filter(default=instance.default)
+        qs = (product1|product2).exclude(id=instance.id).distinct()
+
+        return qs
 
 class Product(models.Model):
     title = models.CharField(max_length=120)
@@ -35,6 +41,12 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('Product_Detail', kwargs={'pk': self.pk})
+
+    def get_image_url(self):
+        img =self.productimage_set.first()
+        if img:
+            return img.image.url
+        return img
 
 
 class Variation(models.Model):

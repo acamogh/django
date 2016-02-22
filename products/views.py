@@ -6,6 +6,7 @@ from django.http import Http404
 from django.contrib import messages
 from django.db.models import Q
 from django.utils import timezone
+import random
 
 from .forms import ContactForm, VariationInventoryFormSet
 from .models import Product, Variation, Category
@@ -98,6 +99,13 @@ class ProductViewList(ListView):
 
 class ProductDetailView(DetailView):
     model = Product
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(*args, **kwargs)
+        context['related']=sorted(Product.objects.get_related(self.get_object())[:6], key= lambda x: random.random())
+        print context
+        return context
+
 
 
 def contact(request):
